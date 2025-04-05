@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Standardization Result - Credit Card Statement Normalizer</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            padding-top: 20px;
+        }
+        .card {
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border: none;
+            margin-bottom: 30px;
+        }
+        .card-header {
+            background-color: #0d6efd;
+            color: white;
+            font-weight: bold;
+        }
+        .container {
+            max-width: 800px;
+        }
+        .success-icon {
+            font-size: 60px;
+            color: #198754;
+            margin-bottom: 20px;
+        }
+        .result-details {
+            background-color: #f2f2f2;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        .btn-download {
+            margin-top: 10px;
+        }
+        .file-info {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        .file-icon {
+            font-size: 24px;
+            margin-right: 10px;
+            color: #6c757d;
+        }
+        .file-name {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="card-header text-center py-3">
+                <h2>Credit Card Statement Normalizer</h2>
+            </div>
+            <div class="card-body text-center">
+                <div class="success-icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <h3>Standardization Complete!</h3>
+                <p class="lead">Your credit card statement has been successfully standardized.</p>
+                
+                <div class="result-details">
+                    <h5>Processing Summary</h5>
+                    <p><strong>Rows Processed:</strong> {{ rows_processed }}</p>
+                    
+                    <div class="file-info">
+                        <div class="file-icon">
+                            <i class="fas fa-file-csv"></i>
+                        </div>
+                        <div>
+                            <div class="file-name">Input File:</div>
+                            <div>{{ input_filename }}</div>
+                        </div>
+                    </div>
+                    
+                    <div class="file-info">
+                        <div class="file-icon">
+                            <i class="fas fa-file-csv"></i>
+                        </div>
+                        <div>
+                            <div class="file-name">Output File:</div>
+                            <div>{{ output_filename }}</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-4">
+                    <a href="{% url 'download_file' output_filename %}" class="btn btn-success btn-download">
+                        <i class="fas fa-download"></i> Download Standardized CSV
+                    </a>
+                </div>
+                
+                <div class="mt-3">
+                    <a href="{% url 'home' %}" class="btn btn-outline-primary">
+                        <i class="fas fa-upload"></i> Process Another File
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</body>
+</html> 
