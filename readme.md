@@ -21,21 +21,17 @@ A simple Django application that standardizes credit card statements from variou
 ## Installation
 
 1. Clone the repository or download the source code
+git clone https://github.com/AdityaBhandari23/creditcard-normalizer.git
+cd creditcard-normalizer
 
-2. Create a virtual environment:
-```bash
+2. Create and activate virtual environment:
 python -m venv venv
-```
+# Windows
+venv\Scripts\activate
+# macOS/Linux
+source venv/bin/activate
 
-3. Activate the virtual environment:
-   - Windows: 
-   ```
-   venv\Scripts\activate
-   ```
-   - Linux/Mac: 
-   ```
-   source venv/bin/activate
-   ```
+
 
 4. Install the required packages:
 ```bash
