@@ -1,6 +1,18 @@
 # Credit Card Statement Normalizer
 
-A simple Django application that standardizes credit card statements from various banks into a unified format.
+A Django application that converts credit card statements from various banks (HDFC, ICICI, Axis, IDFC) into a standardized format for easier financial tracking and analysis.
+
+## Purpose
+
+The Credit Card Statement Normalizer solves a common problem: different banks use different formats for their credit card statements, making it difficult to consolidate and analyze financial data. This application automatically detects the bank format and standardizes transaction data into a consistent structure with uniform dates, amounts, and categories.
+
+## Live Demo
+
+Access the deployed application: [https://onebanc.onrender.com/](https://onebanc.onrender.com/)
+
+## GitHub Repository
+
+[https://github.com/AdityaBhandari23/OneBanc.git](https://github.com/AdityaBhandari23/OneBanc.git)
 
 ## Features
 
@@ -18,45 +30,59 @@ A simple Django application that standardizes credit card statements from variou
 - Python 3.9+
 - Django 4.2.1
 
-## Installation
+## Installation and Setup
 
-1. Clone the repository or download the source code
-git clone https://github.com/AdityaBhandari23/creditcard-normalizer.git
-cd creditcard-normalizer
+1. Clone the repository:
+```bash
+git clone https://github.com/AdityaBhandari23/OneBanc.git
+cd OneBanc
+```
 
 2. Create and activate virtual environment:
+
+**Windows:**
+```
 python -m venv venv
-# Windows
 venv\Scripts\activate
-# macOS/Linux
+```
+
+**PowerShell Activation (if you encounter errors):**
+```
+cd venv\Scripts
+activate
+cd ..\..
+```
+
+**macOS/Linux:**
+```
+python -m venv venv
 source venv/bin/activate
+```
 
-
-
-4. Install the required packages:
+3. Install the required packages:
 ```bash
 pip install -r requirements.txt
 ```
 
-5. Run migrations:
+4. Run migrations:
 ```bash
 python manage.py migrate
 ```
 
-6. Start the development server:
+5. Start the development server:
 ```bash
 python manage.py runserver
 ```
 
-7. Access the application at http://127.0.0.1:8000/
+6. Access the application at http://127.0.0.1:8000/
 
 ## How to Use
 
-1. Navigate to the web interface at http://127.0.0.1:8000/
-2. Click "Choose File" or drag and drop a CSV file
-3. Click "Standardize Statement"
+1. Upload a CSV statement file from any supported bank (HDFC, ICICI, Axis, IDFC)
+2. The system will automatically detect the bank format
+3. Click "Standardize Statement" to process the file
 4. Download the standardized CSV file
-5. Import into your financial tools
+5. Import the standardized file into your financial tools or spreadsheets
 
 ## Output Format
 
@@ -79,6 +105,6 @@ To support a new bank format:
 
 ## Troubleshooting
 
-- Make sure your CSV file is properly formatted
 - Ensure your virtual environment is activated before running commands
-- Check Django logs for detailed error messages
+- Make sure your CSV file is properly formatted
+- Check the Django server logs for detailed error messages
